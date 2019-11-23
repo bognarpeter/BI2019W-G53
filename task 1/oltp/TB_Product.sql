@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `BI_OLTP`.`TB_Product` (
   `ProductID` INT NOT NULL,
   `Name` VARCHAR(255) NOT NULL,
-  `ProductNumber` INT NOT NULL,
+  `ProductNumber` VARCHAR(255) NOT NULL,
   `StandardCost` DECIMAL(38,2) NOT NULL,
   `ListPrice` DECIMAL(38,2) NOT NULL,
   `Size` DECIMAL(38,2) NULL,
