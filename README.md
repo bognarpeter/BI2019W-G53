@@ -2,7 +2,7 @@
 
 ## Part B
 ### Task 1
-Database in MySQL
+#### Database in MySQL
 
 Name of Shema: bi_oltp
 
