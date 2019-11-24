@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS `BI_OLAP`.`DM_Product` (
+  `ProductID` INT NOT NULL,
+  `ProductNumber` VARCHAR(255) NOT NULL,
+  `Name` VARCHAR(255) NOT NULL,
+  `ModelName`  VARCHAR(255) NOT NULL,
+  `StandardCost` DECIMAL(38,2) NULL,
+  `ListPrice` DECIMAL(38,2) NULL,
+  `ProductSubCategory` VARCHAR(255) NOT NULL,
+  `ProductTopCategory` VARCHAR(255) NOT NULL,
+  `SellStartDate` DATE NOT NULL,
+  `SellEndDate` DATE NOT NULL,
+  `DiscontinuedDate` DATE NOT NULL,
+  `Size` DECIMAL(38,2) NULL,
+  `Weight` DECIMAL(38,2) NULL,
+  `IsBulkyItem` BOOLEAN NOT NULL,
+  CONSTRAINT PK_ProductID PRIMARY KEY (`ProductID`))

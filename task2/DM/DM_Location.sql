@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS `BI_OLAP`.`DM_Location` (
+  `AddressID` INT NOT NULL,
+  `PostalCode` INT NOT NULL,
+  `City` VARCHAR(255) NOT NULL,
+  `StateProvince` VARCHAR(255) NOT NULL,
+  `CountryRegion` VARCHAR(255) NOT NULL,
+  CONSTRAINT PK_AddressID PRIMARY KEY (`AddressID`))
