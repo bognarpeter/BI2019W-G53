@@ -4,5 +4,5 @@ SElECT
   `A.PostalCode`,
   `A.City`,
   `A.StateProvince`,
-  `A.CountryRegion`,
+  `A.CountryRegion`
 FROM `BI_OLTP`.`TB_Address` AS A;

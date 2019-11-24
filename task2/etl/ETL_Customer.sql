@@ -13,5 +13,5 @@ SElECT
               ELSE `C.Gender` END;
   IF(`C.Gender`='F',"Female","Male"),
   `C.EmailAddress`,
-  `C.Phone`,
+  `C.Phone`
 FROM `BI_OLTP`.`TB_Customer` AS C;
