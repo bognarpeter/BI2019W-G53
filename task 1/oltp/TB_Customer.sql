@@ -8,6 +8,6 @@ CREATE TABLE IF NOT EXISTS `BI_OLTP`.`TB_Customer` (
   `EmailAdress` VARCHAR(255) NULL,
   `Phone` INT NULL,
   `Gender` VARCHAR(45) NOT NULL,
-  `Brthdate` DATE NOT NULL,
+  `Birthdate` DATE NOT NULL,
   CONSTRAINT PK_Customer PRIMARY KEY (`CustomerID`))
 ENGINE = InnoDB
