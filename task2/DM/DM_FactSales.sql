@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `BI_OLAP`.`DM_FactSales` (
+CREATE TABLE IF NOT EXISTS `BI_OLAP_53`.`DM_FactSales` (
   `SalesOrderNumber` INT NOT NULL,
   `SalesOrderLineNumber` INT NOT NULL,
   `CustomerID` INT NOT NULL,
@@ -21,37 +21,37 @@ CREATE TABLE IF NOT EXISTS `BI_OLAP`.`DM_FactSales` (
   CONSTRAINT PK_CustomerID PRIMARY KEY (`SalesOrderNumber`, `SalesOrderLineNumber`),
   CONSTRAINT `FK_CustomerID`
   FOREIGN KEY (`CustomerID`)
-  REFERENCES `BI_OLAP`.`DM_Customer` (`CustomerID`)
+  REFERENCES `BI_OLAP_53`.`DM_Customer` (`CustomerID`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION,
   CONSTRAINT `FK_ProductID`
   FOREIGN KEY (`ProductID`)
-  REFERENCES `BI_OLAP`.`DM_Product` (`ProductID`)
+  REFERENCES `BI_OLAP_53`.`DM_Product` (`ProductID`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION,
   CONSTRAINT `FK_ShipToAddressID`
   FOREIGN KEY (`ShipToAddressID`)
-  REFERENCES `BI_OLAP`.`DM_Location` (`AddressID`)
+  REFERENCES `BI_OLAP_53`.`DM_Location` (`AddressID`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION,
   CONSTRAINT `FK_BillToAddressID`
   FOREIGN KEY (`BillToAddressID`)
-  REFERENCES `BI_OLAP`.`DM_Location` (`AddressID`)
+  REFERENCES `BI_OLAP_53`.`DM_Location` (`AddressID`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION,
   CONSTRAINT `FK_OrderDate`
   FOREIGN KEY (`OrderDate`)
-  REFERENCES `BI_OLAP`.`DM_Time` (`Date`)
+  REFERENCES `BI_OLAP_53`.`DM_Time` (`Date`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION,
   CONSTRAINT `FK_DueDate`
   FOREIGN KEY (`DueDate`)
-  REFERENCES `BI_OLAP`.`DM_Time` (`Date`)
+  REFERENCES `BI_OLAP_53`.`DM_Time` (`Date`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION,
   CONSTRAINT `FK_ShipDate`
   FOREIGN KEY (`ShipDate`)
-  REFERENCES `BI_OLAP`.`DM_Time` (`Date`)
+  REFERENCES `BI_OLAP_53`.`DM_Time` (`Date`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
 )

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `BI_OLAP`.`DM_Time` (
+CREATE TABLE IF NOT EXISTS `BI_OLAP_53`.`DM_Time` (
   `Date` DATE NOT NULL,
   `DayNumberOfMonth` INT NOT NULL,
   `MonthNumberOfYear` INT NOT NULL,
