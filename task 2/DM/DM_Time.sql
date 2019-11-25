@@ -3,4 +3,4 @@ CREATE TABLE IF NOT EXISTS `BI_OLAP_53`.`DM_Time` (
   `DayNumberOfMonth` INT NOT NULL,
   `MonthNumberOfYear` INT NOT NULL,
   `CalendarYear` INT NOT NULL,
-  CONSTRAINT PK_Date PRIMARY KEY (`Date`))
+  CONSTRAINT PK_Date PRIMARY KEY (`Date`));

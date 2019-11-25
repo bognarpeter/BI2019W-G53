@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `BI_OLAP_53`.`DM_FactSales` (
-  `SalesOrderNumber` INT NOT NULL,
-  `SalesOrderLineNumber` INT NOT NULL,
+  `SalesOrderNumber` VARCHAR(100) NOT NULL,
+  `SalesOrderLineNumber` VARCHAR(100) NOT NULL,
   `CustomerID` INT NOT NULL,
   `ProductID` INT NOT NULL,
   `ShipToAddressID` INT NOT NULL,
@@ -54,4 +54,4 @@ CREATE TABLE IF NOT EXISTS `BI_OLAP_53`.`DM_FactSales` (
   REFERENCES `BI_OLAP_53`.`DM_Time` (`Date`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
-)
+);
