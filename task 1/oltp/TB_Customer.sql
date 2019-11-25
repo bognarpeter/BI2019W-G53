@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `BI_OLTP`.`TB_Customer` (
   `MiddleName` VARCHAR(255) NULL,
   `LastName` VARCHAR(255) NOT NULL,
   `Suffix` VARCHAR(255) NULL,
-  `EmailAdress` VARCHAR(255) NULL,
+  `EmailAddress` VARCHAR(255) NULL,
   `Phone` INT NULL,
   `Gender` VARCHAR(45) NOT NULL,
   `Birthdate` DATE NOT NULL,
