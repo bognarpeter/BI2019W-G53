@@ -408,7 +408,7 @@
       <lineterminated/>
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
-      <listattribut>CustomerID, Title, FirstName, MiddleName, LastName, Suffix, EmailAdress, Phone, Gender, Brthdate</listattribut>
+      <listattribut>CustomerID, Title, FirstName, MiddleName, LastName, Suffix, EmailAdress, Phone, Gender, Birthdate</listattribut>
       <localinfile>Y</localinfile>
       <prorityvalue>0</prorityvalue>
       <addfiletoresult>N</addfiletoresult>
