@@ -5,9 +5,9 @@ CREATE TABLE IF NOT EXISTS `BI_OLTP`.`TB_Customer` (
   `MiddleName` VARCHAR(255) NULL,
   `LastName` VARCHAR(255) NOT NULL,
   `Suffix` VARCHAR(255) NULL,
-  `EmailAdress` VARCHAR(255) NULL,
-  `Phone` INT NULL,
-  `Gender` VARCHAR(45) NOT NULL,
-  `Brthdate` DATE NOT NULL,
+  `EmailAddress` VARCHAR(255) NULL,
+  `Phone` VARCHAR(255) NULL,
+  `Gender` VARCHAR(255) NOT NULL,
+  `Birthdate` DATE NOT NULL,
   CONSTRAINT PK_Customer PRIMARY KEY (`CustomerID`))
 ENGINE = InnoDB

@@ -4,4 +4,4 @@ CREATE TABLE IF NOT EXISTS `BI_OLAP_53`.`DM_Location` (
   `City` VARCHAR(255) NOT NULL,
   `StateProvince` VARCHAR(255) NOT NULL,
   `CountryRegion` VARCHAR(255) NOT NULL,
-  CONSTRAINT PK_AddressID PRIMARY KEY (`AddressID`))
+  CONSTRAINT PK_AddressID PRIMARY KEY (`AddressID`));

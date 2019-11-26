@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `BI_OLTP`.`TB_SalesOrderHeader` (
   `OrderDate` DATE NOT NULL,
   `DueDate` DATE NOT NULL,
   `ShipDate` DATE NULL,
-  `Satus` INT NOT NULL,
+  `Status` INT NOT NULL,
   `SalesOrderNumber` VARCHAR(255) NOT NULL,
   `CustomerID` INT NOT NULL,
   `ShipToAddressID` INT NOT NULL,

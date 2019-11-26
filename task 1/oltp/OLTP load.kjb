@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <job>
   <name>OLTP load</name>
-  <description/>
-  <extended_description/>
-  <job_version/>
+  <description />
+  <extended_description />
+  <job_version />
   <directory>/</directory>
   <created_user>-</created_user>
   <created_date>2019/11/23 12:58:31.341</created_date>
@@ -19,9 +20,9 @@
     <port>3306</port>
     <username>root</username>
     <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -72,12 +73,12 @@
   <slaveservers>
     </slaveservers>
   <job-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <size_limit_lines/>
-    <interval/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <size_limit_lines />
+    <interval />
+    <timeout_days />
     <field>
       <id>ID_JOB</id>
       <enabled>Y</enabled>
@@ -185,10 +186,10 @@
     </field>
   </job-log-table>
   <jobentry-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -276,10 +277,10 @@
     </field>
   </jobentry-log-table>
   <channel-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -342,13 +343,13 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
-  <shared_objects_file/>
+  <shared_objects_file />
   <entries>
     <entry>
       <name>Start</name>
-      <description/>
+      <description />
       <type>SPECIAL</type>
-      <attributes/>
+      <attributes />
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -364,21 +365,21 @@
       <nr>0</nr>
       <xloc>64</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load ShipMethod Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_shipmethod</tablename>
       <filename>${BI_HOME}\data\ShipMethod.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
       <listattribut>ShipMethodID, Name, CostPerShipment, CostPerUnit, BulkyItemSurcharge</listattribut>
@@ -391,24 +392,24 @@
       <nr>0</nr>
       <xloc>720</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load Customer Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_customer</tablename>
       <filename>${BI_HOME}\data\Customer.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
-      <listattribut>CustomerID, Title, FirstName, MiddleName, LastName, Suffix, EmailAdress, Phone, Gender, Brthdate</listattribut>
+      <listattribut>CustomerID, Title, FirstName, MiddleName, LastName, Suffix, EmailAddress, Phone, Gender, Birthdate</listattribut>
       <localinfile>Y</localinfile>
       <prorityvalue>0</prorityvalue>
       <addfiletoresult>N</addfiletoresult>
@@ -418,21 +419,21 @@
       <nr>1</nr>
       <xloc>256</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load CustomerAddress Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_customeraddress</tablename>
       <filename>${BI_HOME}\data\CustomerAddress.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
       <listattribut>CustomerID, AddressID, AddressType</listattribut>
@@ -445,21 +446,21 @@
       <nr>0</nr>
       <xloc>576</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load Address Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_address</tablename>
       <filename>${BI_HOME}\data\Address.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
       <listattribut>AddressID, AddressLine, City, StateProvince,CountryRegion, PostalCode</listattribut>
@@ -472,21 +473,21 @@
       <nr>1</nr>
       <xloc>416</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load SalesOrderDetail Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_salesorderdetail</tablename>
       <filename>${BI_HOME}\data\SalesOrderDetail.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
       <listattribut>SalesOrderID, SalesOrderDetailID, OrderQty, ProductID, UnitPrice</listattribut>
@@ -499,21 +500,21 @@
       <nr>0</nr>
       <xloc>1328</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load ProductCategory Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_productcategory</tablename>
       <filename>${BI_HOME}\data\ProductCategory.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
       <listattribut>ProductCategoryID, ParentProductCategoryID, Name</listattribut>
@@ -526,21 +527,21 @@
       <nr>0</nr>
       <xloc>864</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load Product Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_product</tablename>
       <filename>${BI_HOME}\data\Product.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
       <listattribut>ProductID, Name, ProductNumber, StandardCost, ListPrice, Size, Weight, ProductCategoryID, ProductModelName, SellStartDate, SellEndDate, DiscontinuedDate</listattribut>
@@ -553,24 +554,24 @@
       <nr>0</nr>
       <xloc>1008</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Load SalesOrderHeader Data</name>
-      <description/>
+      <description />
       <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
+      <attributes />
+      <schemaname />
       <tablename>tb_salesorderheader</tablename>
       <filename>${BI_HOME}\data\SalesOrderHeader.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
+      <separator />
+      <enclosed />
+      <escaped />
+      <linestarted />
+      <lineterminated />
       <replacedata>N</replacedata>
       <ignorelines>0</ignorelines>
-      <listattribut>SalesOrderID, RevisionNumber, OrderDate, DueDate, ShipDate, Satus, SalesOrderNumber, CustomerID, ShipToAddressID, BillToAddressID, ShipMethodID</listattribut>
+      <listattribut>SalesOrderID, RevisionNumber, OrderDate, DueDate, ShipDate, Status, SalesOrderNumber, CustomerID, ShipToAddressID, BillToAddressID, ShipMethodID</listattribut>
       <localinfile>Y</localinfile>
       <prorityvalue>0</prorityvalue>
       <addfiletoresult>N</addfiletoresult>
@@ -580,32 +581,32 @@
       <nr>0</nr>
       <xloc>1152</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Success</name>
-      <description/>
+      <description />
       <type>SUCCESS</type>
-      <attributes/>
+      <attributes />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>1456</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Set Home Variable</name>
-      <description/>
+      <description />
       <type>SET_VARIABLES</type>
-      <attributes/>
+      <attributes />
       <replacevars>Y</replacevars>
-      <filename/>
+      <filename />
       <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
         <field>
           <variable_name>BI_HOME</variable_name>
-          <variable_value>C:\Users\wagn3\Documents\Studium\Master\TU\3.Semester\BI\Assignment 1\PartB\Task1</variable_value>
+          <variable_value>/Users/peter/Documents/University/2019W/BI/BI2019W-G53/task1/oltp</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
@@ -614,7 +615,7 @@
       <nr>0</nr>
       <xloc>144</xloc>
       <yloc>176</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
   </entries>
   <hops>
@@ -711,5 +712,5 @@
   </hops>
   <notepads>
   </notepads>
-  <attributes/>
+  <attributes />
 </job>
