@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `BI_OLTP`.`TB_Product` (
+CREATE TABLE IF NOT EXISTS `BI_OLTP_53`.`TB_Product` (
   `ProductID` INT NOT NULL,
   `Name` VARCHAR(255) NOT NULL,
   `ProductNumber` VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `BI_OLTP`.`TB_Product` (
   INDEX `FK_ProductCategory_Product_idx` (`ProductCategoryID` ASC) VISIBLE,
   CONSTRAINT `FK_ProductCategory_Product`
     FOREIGN KEY (`ProductCategoryID`)
-    REFERENCES `BI_OLTP`.`TB_ProductCategory` (`ProductCategoryID`)
+    REFERENCES `BI_OLTP_53`.`TB_ProductCategory` (`ProductCategoryID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
