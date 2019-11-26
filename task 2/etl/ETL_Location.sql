@@ -5,4 +5,4 @@ SElECT
   A.`City`,
   A.`StateProvince`,
   A.`CountryRegion`
-FROM `BI_OLTP`.`TB_Address` AS A;
+FROM `BI_OLTP_53`.`TB_Address` AS A;
