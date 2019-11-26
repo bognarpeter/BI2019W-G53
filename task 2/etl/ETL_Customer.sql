@@ -14,4 +14,4 @@ SELECT
   END,
   C.`EmailAddress`,
   C.`Phone`
-FROM `BI_OLTP`.`TB_Customer` AS C;
+FROM `BI_OLTP_53`.`TB_Customer` AS C;
