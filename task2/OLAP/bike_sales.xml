@@ -1,4 +1,4 @@
-<Schema name="bi_olap_53">
+<Schema name="bike_sales">
   <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Date">
     <Hierarchy name="Days" visible="true" hasAll="true" primaryKey="Date" primaryKeyTable="dm_time">
       <Level name="Year" visible="true" table="dm_time" column="CalendarYear" type="String" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
