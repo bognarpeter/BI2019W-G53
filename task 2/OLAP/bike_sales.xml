@@ -1,7 +1,7 @@
 <Schema name="bike_sales">
   <Dimension type="TimeDimension" visible="true" highCardinality="false" name="Date">
     <Hierarchy name="Days" visible="true" hasAll="true" primaryKey="Date">
-      <Table name="dm_time" alias="">
+      <Table name="dm_time">
       </Table>
       <Level name="Year" visible="true" table="dm_time" column="CalendarYear" type="String" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
       </Level>
@@ -13,7 +13,7 @@
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Location">
     <Hierarchy name="Areas" visible="true" hasAll="true" primaryKey="AddressID">
-      <Table name="dm_location" alias="">
+      <Table name="dm_location">
       </Table>
       <Level name="CountryRegion" visible="true" table="dm_location" column="CountryRegion" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -25,7 +25,7 @@
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Product">
     <Hierarchy name="ProductCategory" visible="true" hasAll="true" primaryKey="ProductID">
-      <Table name="dm_product" alias="">
+      <Table name="dm_product">
       </Table>
       <Level name="TopCategory" visible="true" table="dm_product" column="ProductTopCategory" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -33,7 +33,7 @@
       </Level>
     </Hierarchy>
     <Hierarchy name="Name" visible="true" hasAll="true" primaryKey="ProductID">
-      <Table name="dm_product" alias="">
+      <Table name="dm_product">
       </Table>
       <Level name="Name" visible="true" table="dm_product" column="Name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
@@ -47,13 +47,13 @@
       </Level>
     </Hierarchy>
     <Hierarchy name="Gender" visible="true" hasAll="true" primaryKey="CustomerID">
-      <Table name="dm_customer" alias="">
+      <Table name="dm_customer">
       </Table>
       <Level name="Gender" visible="true" table="dm_customer" column="Gender" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
     <Hierarchy name="Name" visible="true" hasAll="true" primaryKey="CustomerID">
-      <Table name="dm_customer" alias="">
+      <Table name="dm_customer">
       </Table>
       <Level name="Name" visible="true" table="dm_customer" column="Name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
