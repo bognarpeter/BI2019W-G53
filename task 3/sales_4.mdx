@@ -1,0 +1,19 @@
+WITH
+SET Top5Customers AS
+TopCount(
+       [Customer.Name].Children,
+       5,
+       [Measures].[Profit]
+       )
+	
+SET Top4Products AS
+Generate(Top5Customers, 
+TopCount(
+	([Customer.Name].currentmember * [Product.Name].children * [Measures].[Profit] ),
+	4,
+	[Measures].[Quantity]))
+
+SELECT {Top4Products} ON 0
+FROM [bike_sales]
+
+--Results visible on Axis 1
