@@ -78,7 +78,7 @@
     </Measure>
     <Measure name="Revenue" column="OrderLineTotal" datatype="Numeric" formatString="$00#,###.00" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="Quantity" column="OrderQuantity" datatype="Integer" aggregator="distinct-count" visible="true">
+    <Measure name="Quantity" column="OrderQuantity" datatype="Integer" aggregator="sum" visible="true">
     </Measure>
     <Measure name="Discount" column="Discount" datatype="Numeric" formatString="00#,###.00%" aggregator="avg" visible="true">
     </Measure>

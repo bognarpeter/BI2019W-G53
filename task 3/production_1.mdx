@@ -1,0 +1,22 @@
+SELECT non empty{
+(
+	generate(
+	[Product.ProductCategory].[TopCategory].members, 
+	BottomCount([Product.ProductCategory].[TopCategory].currentmember * [Product.Name].children,
+		3,
+		[Measures].[Quantity])
+	)
+	
+)
+
+
+} ON 0
+,
+{
+([Measures].[Quantity])
+
+} ON 1
+
+FROM [bike_sales]
+
+--Results visible on Axis 1 and the sold quantities on Axis 2. Only sold products are included. 

@@ -9,11 +9,12 @@ TopCount(
 SET Top4Products AS
 Generate(Top5Customers, 
 TopCount(
-	([Customer.Name].currentmember * [Product.Name].children * [Measures].[Profit] ),
+	([Customer.Name].currentmember * [Product.Name].children),
 	4,
 	[Measures].[Quantity]))
 
-SELECT {Top4Products} ON 0
+SELECT {Top4Products} ON 0,
+{[Measures].[Quantity]} ON 1
 FROM [bike_sales]
 
 --Results visible on Axis 1
