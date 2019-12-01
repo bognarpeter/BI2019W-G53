@@ -1,0 +1,20 @@
+WITH MEMBER [Measures].[allorders] AS 
+	COUNT([OrderDate].members)
+
+
+MEMBER [Measures].[percent] AS
+	[Measures].[IsLateShipment]/[Measures].[allorders]
+
+SELECT
+	{
+	[Measures].[percent]
+	}
+	ON COLUMNS,
+
+ORDER(
+	{[ShippedTo.Areas].[CountryRegion].members},
+	[Measures].[percent]
+	,ASC)
+ON ROWS
+
+FROM [bike_sales]
