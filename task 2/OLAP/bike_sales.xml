@@ -86,7 +86,7 @@
     </Measure>
     <Measure name="TaxAmount" column="TaxAmount" datatype="Numeric" formatString="$00#,###.00" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="IsLateShiptment" column="IsLateShipment" datatype="Integer" aggregator="count" visible="true">
+    <Measure name="IsLateShipment" column="IsLateShipment" datatype="Numeric" aggregator="sum" visible="true">
     </Measure>
   </Cube>
 </Schema>
