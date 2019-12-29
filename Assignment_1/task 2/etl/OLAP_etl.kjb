@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>OLTP load</name>
-  <description/>
-  <extended_description/>
-  <job_version/>
+  <name>OLAP etl</name>
+  <description />
+  <extended_description />
+  <job_version />
+  <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2019/11/23 12:58:31.341</created_date>
+  <created_date>2019/11/23 11:44:51.644</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2019/11/23 14:49:38.583</modified_date>
+  <modified_date>2019/11/23 14:48:18.014</modified_date>
   <parameters>
     </parameters>
   <connection>
-    <name>BI_OLTP_53</name>
+    <name>BI_OLAP_53</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>bi_oltp_53</database>
+    <database>bi_olap_53</database>
     <port>3306</port>
     <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2a1aa1da978dbc3ff9b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <password>Encrypted </password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -49,10 +50,6 @@
         <attribute>N</attribute>
       </attribute>
       <attribute>
-        <code>SQL_CONNECT</code>
-        <attribute>set global local_infile = 1;</attribute>
-      </attribute>
-      <attribute>
         <code>STREAM_RESULTS</code>
         <attribute>Y</attribute>
       </attribute>
@@ -73,12 +70,12 @@
   <slaveservers>
     </slaveservers>
   <job-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <size_limit_lines/>
-    <interval/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <size_limit_lines />
+    <interval />
+    <timeout_days />
     <field>
       <id>ID_JOB</id>
       <enabled>Y</enabled>
@@ -186,10 +183,10 @@
     </field>
   </job-log-table>
   <jobentry-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -277,10 +274,10 @@
     </field>
   </jobentry-log-table>
   <channel-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -343,13 +340,31 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
-  <shared_objects_file/>
+  <shared_objects_file />
   <entries>
     <entry>
+      <name>ETL Location</name>
+      <description />
+      <type>SQL</type>
+      <attributes />
+      <sql />
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${BI_HOME}ETL_Location.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>BI_OLAP_53</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>96</yloc>
+      <attributes_kjc />
+    </entry>
+    <entry>
       <name>Start</name>
-      <description/>
+      <description />
       <type>SPECIAL</type>
-      <attributes/>
+      <attributes />
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -363,283 +378,121 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>64</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
+      <xloc>80</xloc>
+      <yloc>96</yloc>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>Load ShipMethod Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_shipmethod</tablename>
-      <filename>${BI_HOME}\data\ShipMethod.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>ShipMethodID, Name, CostPerShipment, CostPerUnit, BulkyItemSurcharge</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
+      <name>ETL Time</name>
+      <description />
+      <type>SQL</type>
+      <attributes />
+      <sql />
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${BI_HOME}\ETL_Time.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>720</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
+      <xloc>480</xloc>
+      <yloc>96</yloc>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>Load Customer Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_customer</tablename>
-      <filename>${BI_HOME}\data\Customer.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>CustomerID, Title, FirstName, MiddleName, LastName, Suffix, EmailAddress, Phone, Gender, Birthdate</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>1</nr>
-      <xloc>256</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Load CustomerAddress Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_customeraddress</tablename>
-      <filename>${BI_HOME}\data\CustomerAddress.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>CustomerID, AddressID, AddressType</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
+      <name>ETL Customer</name>
+      <description />
+      <type>SQL</type>
+      <attributes />
+      <sql />
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${BI_HOME}\ETL_Customer.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
+      <xloc>480</xloc>
+      <yloc>256</yloc>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>Load Address Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_address</tablename>
-      <filename>${BI_HOME}\data\Address.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>AddressID, AddressLine, City, StateProvince,CountryRegion, PostalCode</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>1</nr>
-      <xloc>416</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Load SalesOrderDetail Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_salesorderdetail</tablename>
-      <filename>${BI_HOME}\data\SalesOrderDetail.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>SalesOrderID, SalesOrderDetailID, OrderQty, ProductID, UnitPrice</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
+      <name>ETL Product</name>
+      <description />
+      <type>SQL</type>
+      <attributes />
+      <sql />
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${BI_HOME}\ETL_Product.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1328</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
+      <xloc>480</xloc>
+      <yloc>384</yloc>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>Load ProductCategory Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_productcategory</tablename>
-      <filename>${BI_HOME}\data\ProductCategory.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>ProductCategoryID, ParentProductCategoryID, Name</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
+      <name>ETL FactSales</name>
+      <description />
+      <type>SQL</type>
+      <attributes />
+      <sql />
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>${BI_HOME}\ETL_FactSales.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Load Product Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_product</tablename>
-      <filename>${BI_HOME}\data\Product.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>ProductID, Name, ProductNumber, StandardCost, ListPrice, Size, Weight, ProductCategoryID, ProductModelName, SellStartDate, SellEndDate, DiscontinuedDate</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1008</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>Load SalesOrderHeader Data</name>
-      <description/>
-      <type>MYSQL_BULK_LOAD</type>
-      <attributes/>
-      <schemaname/>
-      <tablename>tb_salesorderheader</tablename>
-      <filename>${BI_HOME}\data\SalesOrderHeader.csv</filename>
-      <separator/>
-      <enclosed/>
-      <escaped/>
-      <linestarted/>
-      <lineterminated/>
-      <replacedata>N</replacedata>
-      <ignorelines>0</ignorelines>
-      <listattribut>SalesOrderID, RevisionNumber, OrderDate, DueDate, ShipDate, Status, SalesOrderNumber, CustomerID, ShipToAddressID, BillToAddressID, ShipMethodID</listattribut>
-      <localinfile>Y</localinfile>
-      <prorityvalue>0</prorityvalue>
-      <addfiletoresult>N</addfiletoresult>
-      <connection>BI_OLTP_53</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1152</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
+      <xloc>480</xloc>
+      <yloc>512</yloc>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Success</name>
-      <description/>
+      <description />
       <type>SUCCESS</type>
-      <attributes/>
+      <attributes />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1456</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
+      <xloc>656</xloc>
+      <yloc>512</yloc>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Set Home Variable</name>
-      <description/>
+      <description />
       <type>SET_VARIABLES</type>
-      <attributes/>
+      <attributes />
       <replacevars>Y</replacevars>
-      <filename/>
+      <filename />
       <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
         <field>
           <variable_name>BI_HOME</variable_name>
-          <variable_value>D:\Dropbox\Uni\Master\6. Semester\Business intelligence\Assignment 1\Part B\BI2019W-G53\task 1\oltp\</variable_value>
+          <variable_value>/Users/peter/Documents/University/2019W/BI/BI2019W-G53/task 2/etl/</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
-      <yloc>176</yloc>
-      <attributes_kjc/>
+      <xloc>192</xloc>
+      <yloc>96</yloc>
+      <attributes_kjc />
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>Load Customer Data</from>
-      <to>Load Address Data</to>
-      <from_nr>1</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Load Address Data</from>
-      <to>Load CustomerAddress Data</to>
-      <from_nr>1</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Load CustomerAddress Data</from>
-      <to>Load ShipMethod Data</to>
+      <from>ETL Location</from>
+      <to>ETL Time</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -647,8 +500,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Load ShipMethod Data</from>
-      <to>Load ProductCategory Data</to>
+      <from>ETL Time</from>
+      <to>ETL Customer</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -656,8 +509,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Load ProductCategory Data</from>
-      <to>Load Product Data</to>
+      <from>ETL Customer</from>
+      <to>ETL Product</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -665,25 +518,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Load Product Data</from>
-      <to>Load SalesOrderHeader Data</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Load SalesOrderHeader Data</from>
-      <to>Load SalesOrderDetail Data</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Load SalesOrderDetail Data</from>
+      <from>ETL FactSales</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -702,9 +537,18 @@
     </hop>
     <hop>
       <from>Set Home Variable</from>
-      <to>Load Customer Data</to>
+      <to>ETL Location</to>
       <from_nr>0</from_nr>
-      <to_nr>1</to_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL Product</from>
+      <to>ETL FactSales</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
@@ -712,5 +556,5 @@
   </hops>
   <notepads>
   </notepads>
-  <attributes/>
+  <attributes />
 </job>

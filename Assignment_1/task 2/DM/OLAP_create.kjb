@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>OLAP etl</name>
-  <description/>
-  <extended_description/>
-  <job_version/>
+  <name>OLAP create</name>
+  <description />
+  <extended_description />
+  <job_version />
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
@@ -20,10 +20,10 @@
     <database>bi_olap_53</database>
     <port>3306</port>
     <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2a1aa1da978dbc3ff9b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <password>Encrypted </password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
@@ -70,12 +70,12 @@
   <slaveservers>
     </slaveservers>
   <job-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <size_limit_lines/>
-    <interval/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <size_limit_lines />
+    <interval />
+    <timeout_days />
     <field>
       <id>ID_JOB</id>
       <enabled>Y</enabled>
@@ -183,10 +183,10 @@
     </field>
   </job-log-table>
   <jobentry-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -274,10 +274,10 @@
     </field>
   </jobentry-log-table>
   <channel-log-table>
-    <connection/>
-    <schema/>
-    <table/>
-    <timeout_days/>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
     <field>
       <id>ID_BATCH</id>
       <enabled>Y</enabled>
@@ -340,17 +340,17 @@
     </field>
   </channel-log-table>
   <pass_batchid>N</pass_batchid>
-  <shared_objects_file/>
+  <shared_objects_file />
   <entries>
     <entry>
-      <name>ETL Location</name>
-      <description/>
+      <name>Create Location Table</name>
+      <description />
       <type>SQL</type>
-      <attributes/>
-      <sql/>
+      <attributes />
+      <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${BI_HOME}ETL_Location.sql</sqlfilename>
+      <sqlfilename>${BI_HOME}DM_Location.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
@@ -358,13 +358,13 @@
       <nr>0</nr>
       <xloc>320</xloc>
       <yloc>96</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Start</name>
-      <description/>
+      <description />
       <type>SPECIAL</type>
-      <attributes/>
+      <attributes />
       <start>Y</start>
       <dummy>N</dummy>
       <repeat>N</repeat>
@@ -380,17 +380,17 @@
       <nr>0</nr>
       <xloc>80</xloc>
       <yloc>96</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>ETL Time</name>
-      <description/>
+      <name>Create Time Table</name>
+      <description />
       <type>SQL</type>
-      <attributes/>
-      <sql/>
+      <attributes />
+      <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${BI_HOME}\ETL_Time.sql</sqlfilename>
+      <sqlfilename>${BI_HOME}\DM_Time.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
@@ -398,17 +398,17 @@
       <nr>0</nr>
       <xloc>480</xloc>
       <yloc>96</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>ETL Customer</name>
-      <description/>
+      <name>Create Customer Table</name>
+      <description />
       <type>SQL</type>
-      <attributes/>
-      <sql/>
+      <attributes />
+      <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${BI_HOME}\ETL_Customer.sql</sqlfilename>
+      <sqlfilename>${BI_HOME}\DM_Customer.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
@@ -416,17 +416,17 @@
       <nr>0</nr>
       <xloc>480</xloc>
       <yloc>256</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>ETL Product</name>
-      <description/>
+      <name>Create Product Table</name>
+      <description />
       <type>SQL</type>
-      <attributes/>
-      <sql/>
+      <attributes />
+      <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${BI_HOME}\ETL_Product.sql</sqlfilename>
+      <sqlfilename>${BI_HOME}\DM_Product.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
@@ -434,17 +434,17 @@
       <nr>0</nr>
       <xloc>480</xloc>
       <yloc>384</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
-      <name>ETL FactSales</name>
-      <description/>
+      <name>Create FactSales Table</name>
+      <description />
       <type>SQL</type>
-      <attributes/>
-      <sql/>
+      <attributes />
+      <sql />
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>T</sqlfromfile>
-      <sqlfilename>${BI_HOME}\ETL_FactSales.sql</sqlfilename>
+      <sqlfilename>${BI_HOME}\DM_FactSales.sql</sqlfilename>
       <sendOneStatement>F</sendOneStatement>
       <connection>BI_OLAP_53</connection>
       <parallel>N</parallel>
@@ -452,32 +452,32 @@
       <nr>0</nr>
       <xloc>480</xloc>
       <yloc>512</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Success</name>
-      <description/>
+      <description />
       <type>SUCCESS</type>
-      <attributes/>
+      <attributes />
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>656</xloc>
       <yloc>512</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
     <entry>
       <name>Set Home Variable</name>
-      <description/>
+      <description />
       <type>SET_VARIABLES</type>
-      <attributes/>
+      <attributes />
       <replacevars>Y</replacevars>
-      <filename/>
+      <filename />
       <file_variable_type>CURRENT_JOB</file_variable_type>
       <fields>
         <field>
           <variable_name>BI_HOME</variable_name>
-          <variable_value>D:\Dropbox\Uni\Master\6. Semester\Business intelligence\Assignment 1\Part B\BI2019W-G53\task 2\etl\</variable_value>
+          <variable_value>/Users/peter/Documents/University/2019W/BI/BI2019W-G53/task 2/DM/</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
@@ -486,13 +486,13 @@
       <nr>0</nr>
       <xloc>192</xloc>
       <yloc>96</yloc>
-      <attributes_kjc/>
+      <attributes_kjc />
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>ETL Location</from>
-      <to>ETL Time</to>
+      <from>Create Location Table</from>
+      <to>Create Time Table</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -500,8 +500,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ETL Time</from>
-      <to>ETL Customer</to>
+      <from>Create Time Table</from>
+      <to>Create Customer Table</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -509,8 +509,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ETL Customer</from>
-      <to>ETL Product</to>
+      <from>Create Customer Table</from>
+      <to>Create Product Table</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -518,7 +518,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ETL FactSales</from>
+      <from>Create FactSales Table</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -537,7 +537,7 @@
     </hop>
     <hop>
       <from>Set Home Variable</from>
-      <to>ETL Location</to>
+      <to>Create Location Table</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -545,8 +545,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ETL Product</from>
-      <to>ETL FactSales</to>
+      <from>Create Product Table</from>
+      <to>Create FactSales Table</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -556,5 +556,5 @@
   </hops>
   <notepads>
   </notepads>
-  <attributes/>
+  <attributes />
 </job>
