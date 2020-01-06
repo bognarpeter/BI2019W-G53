@@ -2,15 +2,15 @@
   "columns": [
     {
       "index": 1,
-      "percentage": 13
+      "percentage": 20
     },
     {
       "index": 2,
-      "percentage": 23
+      "percentage": 40
     },
     {
       "index": 3,
-      "percentage": 33
+      "percentage": 60
     }
   ]
 }
