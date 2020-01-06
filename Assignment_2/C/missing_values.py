@@ -11,19 +11,21 @@ parser.add_argument('-t', '--type', choices = ['all', 'spec'], default='all', he
 parser.add_argument('-p', '--percent', default=0, help='Percentage of missing values')
 parser.add_argument('-r', '--random', default=1, help='Initalization value of random generator')
 parser.add_argument('-f', '--file', default='preprocessed_data.csv', help='Name of the file, placed in data folder')
+parser.add_argument('-c', '--config', default='config.json', help='Name of the config file')
 options = parser.parse_args()
 
 type = options.type
 percentage = float(int(options.percent)/100)
 random_value = int(options.random)
 file_name = options.file
+config_file = options.config
 
 if percentage<0 or percentage>1:
   print("Percentage must be between 0 and 100")
   sys.exit(1)
 
 rnd.seed(random_value)
-data = pd.read_csv('../data/'+file_name)
+data = pd.read_csv('../source_data/'+file_name)
 
 for column in data:
     col_type = str(data[column].dtype)
@@ -32,7 +34,7 @@ for column in data:
 
 if type == 'spec':
     config = None
-    with open('config.json', 'r') as config_file:
+    with open(config_file, 'r') as config_file:
         config = config_file.read()
         config = json.loads(config)
     for column in config['columns']:
@@ -53,4 +55,4 @@ elif type == 'all':
         row = (cell%rows)
         data.iat[row,col] = np.nan
 
-data.to_csv('../data/'+file_name[:-4]+'_nulled.csv', sep=',', index=False)
+data.to_csv('../result_data/'+file_name[:-4]+'_nulled.csv', sep=',', index=False)
