@@ -1,6 +1,7 @@
 import argparse
 import random as rnd
 import pandas as pd
+import numpy as np
 import json
 import sys
 
@@ -24,10 +25,22 @@ if percentage<0 or percentage>1:
 rnd.seed(random_value)
 data = pd.read_csv('../data/'+file_name)
 
+for column in data:
+    col_type = str(data[column].dtype)
+    if col_type.startswith('int'):
+        data = data.astype({column: 'Int64'})
+
 if type == 'spec':
+    config = None
     with open('config.json', 'r') as config_file:
         config = config_file.read()
         config = json.loads(config)
+    for column in config['columns']:
+        rows = data.shape[0]
+        rows_n = round(rows * float(column['percentage']/100))
+        rows = rnd.sample(range(0, rows), rows_n)
+        for row in rows:
+            data.iat[row,column['index']] = np.nan
 
 elif type == 'all':
     rows = data.shape[0]
@@ -35,7 +48,9 @@ elif type == 'all':
     cells = rows * cols
     cells_n = round(cells * percentage)
     cells = rnd.sample(range(0, cells), cells_n)
-    print(cells)
-    print(data[1][2:4])
+    for cell in cells:
+        col = int(cell/rows)
+        row = (cell%rows)
+        data.iat[row,col] = np.nan
 
-#print(data.head())
+data.to_csv('../data/'+file_name[:-4]+'_nulled.csv', sep=',', index=False)
