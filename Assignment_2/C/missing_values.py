@@ -18,7 +18,7 @@ type = options.type
 percentage = float(int(options.percent)/100)
 random_value = int(options.random)
 file_name = options.file
-config_file = options.config
+config_file = 'configs/' + options.config
 
 if percentage<0 or percentage>1:
   print("Percentage must be between 0 and 100")
@@ -41,8 +41,9 @@ if type == 'spec':
         rows = data.shape[0]
         rows_n = round(rows * float(column['percentage']/100))
         rows = rnd.sample(range(0, rows), rows_n)
+        index = data.columns.get_loc(column['column'])
         for row in rows:
-            data.iat[row,column['index']] = np.nan
+            data.iat[row,index] = np.nan
 
 elif type == 'all':
     rows = data.shape[0]
