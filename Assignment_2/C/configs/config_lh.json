@@ -3,7 +3,7 @@
   "name": "large_null_high_ig",
   "columns": [
     {
-      "index": 135,
+      "column": "R_Weight_lbs",
       "percentage": 35
     }
   ]

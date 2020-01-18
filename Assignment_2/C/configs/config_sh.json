@@ -1,0 +1,10 @@
+
+{
+  "name": "small_null_high_ig",
+  "columns": [
+    {
+      "column": "R_Weight_lbs",
+      "percentage": 5
+    }
+  ]
+}

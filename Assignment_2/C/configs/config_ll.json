@@ -3,7 +3,7 @@
   "name": "large_null_low_ig",
   "columns": [
     {
-      "index": 72,
+      "column": "B_draw",
       "percentage": 35
     }
   ]

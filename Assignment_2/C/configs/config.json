@@ -1,15 +1,15 @@
 {
   "columns": [
     {
-      "index": 1,
+      "column": 1,
       "percentage": 20
     },
     {
-      "index": 2,
+      "column": 2,
       "percentage": 40
     },
     {
-      "index": 3,
+      "column": 3,
       "percentage": 60
     }
   ]

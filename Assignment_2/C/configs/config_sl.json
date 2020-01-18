@@ -1,9 +1,9 @@
 
 {
-  "name": "small_null_high_ig",
+  "name": "small_null_low_ig",
   "columns": [
     {
-      "index": 135,
+      "column": "B_draw",
       "percentage": 5
     }
   ]
