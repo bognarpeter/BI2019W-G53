@@ -20,6 +20,7 @@ options = parser.parse_args()
 type = options.type
 file_name = options.file
 pred_class = options.pred
+code = file_name[-6:-4]
 
 data = pd.read_csv('../result_data/'+file_name)
 
@@ -46,6 +47,7 @@ elif type == 'c':
         pred_class_substitution[pcv]= data.index[data[pred_class] == pcv].tolist()
 
     for column in data:
+        print(column)
         column_type = str(data[column].dtype)
         for pcv in pred_class_values:
             values = [data.iloc[i][column] for i in pred_class_substitution[pcv] if not pd.isnull(data.iloc[i][column])]
@@ -66,4 +68,4 @@ elif type == 'c':
                         data.set_value(i, column, mode)
 
 
-data.to_csv('../result_data/'+file_name[:-4]+'_handled.csv',index=False)
+data.to_csv('../result_data/'+file_name[:-14]+'_handled_'+code+'_'+type+'.csv',index=False)
